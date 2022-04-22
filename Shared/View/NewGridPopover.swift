@@ -14,6 +14,7 @@ struct NewGridPopover: View {
     @Binding var grids: [MapGrid]
 
     @State private var grid = MapGrid()
+    @State private var error: String?
     @Environment(\.self) private var environment
 
     // MARK: Computed Properties
@@ -54,8 +55,18 @@ struct NewGridPopover: View {
                 ColorPicker("Outer Color", selection: $grid.outerColor)
 
                 Button("Add") {
+                    if let error = grid.validate() {
+                        self.error = error
+                        return
+                    }
                     grids.append(grid)
                     environment.dismiss()
+                }
+                .alert(item: $error) { error in
+                    Alert(
+                        title: Text("Error"),
+                        message: Text(error)
+                    )
                 }
             }
             #if !os(macOS)

@@ -85,4 +85,37 @@ struct MapGrid: Equatable {
         )
     }
 
+    // MARK: Methods
+
+    func validate() -> String? {
+        guard northLatitude > southLatitude else {
+            return "The north value must be larger than the south value."
+        }
+        guard eastLongitude > westLongitude else {
+            return "The east value must be larger than the west value."
+        }
+        guard (-90...90).contains(northLatitude) else {
+            return "Invalid north value."
+        }
+        guard (-90...90).contains(southLatitude) else {
+            return "Invalid south value."
+        }
+        guard (-180...180).contains(westLongitude) else {
+            return "Invalid west value."
+        }
+        guard (-180...180).contains(eastLongitude) else {
+            return "Invalid east value."
+        }
+        guard (0...50).contains(overlap) else {
+            return "Invalid overlap value."
+        }
+        guard (1...100).contains(latitudinalCount) else {
+            return "Invalid row count."
+        }
+        guard (1...100).contains(longitudinalCount) else {
+            return "Invalid column count."
+        }
+        return nil
+    }
+
 }
