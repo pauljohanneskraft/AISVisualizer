@@ -13,7 +13,7 @@ The app is currently only available as part of this repository. It is available 
 First, you can select AIS files with the following format. The app expects the first 4, the rest may be ommitted, since they are irrelevant for the computation of paths.
 
 ```
-MMSI,BaseDateTime,LAT,LON,SOG,COG,Heading,VesselName,IMO,CallSign,VesselType,Status,Length,Width,Draft,Cargo,TranscieverClass
+MMSI,BaseDateTime,LAT,LON,SOG,COG,Heading,VesselName,IMO,CallSign,VesselType,Status,Length,Width,Draft,Cargo,TransceiverClass
 ```
 
 <p align="center"><img width="700" alt="Bildschirmfoto 2022-04-22 um 15 32 02" src="https://user-images.githubusercontent.com/15239005/164724529-d0de4351-10f3-4667-ab91-bba183afa924.png"></p>
