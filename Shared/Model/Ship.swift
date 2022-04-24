@@ -13,7 +13,7 @@ actor Ship {
     // MARK: Stored Properties
 
     let ship: AISShip
-    private var positions: [Position]
+    private(set) var positions: [Position]
 
     // MARK: Initialization
 

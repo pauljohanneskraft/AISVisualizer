@@ -48,7 +48,7 @@ struct NewPathPopover: View {
                         if let path = await map.path(
                             mmsi: mmsi,
                             start: start,
-                            interval: 10,
+                            interval: nil,
                             end: end,
                             color: color
                         ) {

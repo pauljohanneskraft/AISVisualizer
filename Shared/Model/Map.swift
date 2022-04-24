@@ -34,20 +34,25 @@ actor Map {
         ships[row.mmsi] = ship
     }
 
-    func path(mmsi: Int, start: Date, interval: TimeInterval, end: Date, color: Color) async -> ShipPath? {
+    func path(mmsi: Int, start: Date, interval: TimeInterval?, end: Date, color: Color) async -> ShipPath? {
         guard let ship = ships[mmsi].map(Ship.init) else {
             return nil
         }
 
         var positions = [Position]()
-        var date = start
 
-        while date < end {
-            defer  { date.addTimeInterval(interval) }
-            guard let coordinate = await ship.coordinate(at: date) else {
-                continue
+        if let interval = interval {
+            var date = start
+
+            while date < end {
+                defer  { date.addTimeInterval(interval) }
+                guard let coordinate = await ship.coordinate(at: date) else {
+                    continue
+                }
+                positions.append(Position(coordinate: coordinate, date: date))
             }
-            positions.append(Position(coordinate: coordinate, date: date))
+        } else {
+            positions = await ship.positions.filter { $0.date >= start && $0.date <= end }
         }
 
         return .init(ship: ship, positions: positions, color: color)
