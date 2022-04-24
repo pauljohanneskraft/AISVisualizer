@@ -18,6 +18,8 @@ struct NewPathPopover: View {
     @State private var start = Date()
     @State private var end = Date()
     @State private var color = Color.black
+    @State private var interpolate = false
+    @State private var interpolationInterval = 10.0
     @State private var error: String?
     @State private var isLoading = false
 
@@ -31,6 +33,10 @@ struct NewPathPopover: View {
             #if !os(macOS)
                 .keyboardType(.numberPad)
             #endif
+            Toggle("Interpolation\(interpolate ? ": " + formattedInterpolationInterval : String())", isOn: $interpolate)
+            if interpolate {
+                Slider(value: $interpolationInterval, in: 1...(20 * 60))
+            }
             DatePicker("Start", selection: $start)
             DatePicker("End", selection: $end)
             ColorPicker("Color", selection: $color)
@@ -48,7 +54,7 @@ struct NewPathPopover: View {
                         if let path = await map.path(
                             mmsi: mmsi,
                             start: start,
-                            interval: nil,
+                            interval: interpolate ? interpolationInterval : nil,
                             end: end,
                             color: color
                         ) {
@@ -74,6 +80,11 @@ struct NewPathPopover: View {
             self.end = range?.end.actualDate ?? Date()
         }
         .padding(24)
+    }
+
+    private var formattedInterpolationInterval: String {
+        (Date(timeIntervalSince1970: 0)..<Date(timeIntervalSince1970: interpolationInterval))
+            .formatted(.components(style: .condensedAbbreviated, fields: [.minute, .second]))
     }
 
 }
