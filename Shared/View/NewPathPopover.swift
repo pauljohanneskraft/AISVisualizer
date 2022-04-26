@@ -11,7 +11,7 @@ struct NewPathPopover: View {
 
     // MARK: Stored Properties
 
-    let map: Map
+    let map: AISMap
     @Binding var paths: [ShipPath]
 
     @State private var mmsi = String()

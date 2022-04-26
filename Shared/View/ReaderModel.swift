@@ -15,7 +15,7 @@ class ReaderModel: ObservableObject {
     enum State {
         case ready
         case loading(rowCount: Int)
-        case finished(Map)
+        case finished(AISMap)
     }
 
     // MARK: Stored Properties
@@ -29,11 +29,11 @@ class ReaderModel: ObservableObject {
     // MARK: Methods
 
     func read(urls: [URL]) {
-        let map: Map
+        let map: AISMap
 
         switch state {
         case .ready:
-            map = Map()
+            map = AISMap()
         case .loading:
             return
         case let .finished(currentMap):

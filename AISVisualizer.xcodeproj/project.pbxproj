@@ -21,8 +21,8 @@
 		9B6DDE5127C40DF300B1B883 /* VisualizationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6DDE4F27C40DF300B1B883 /* VisualizationPage.swift */; };
 		9B7EBC9327C3BCA5005DD366 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7EBC8E27C3BCA5005DD366 /* Position.swift */; };
 		9B7EBC9427C3BCA5005DD366 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7EBC8E27C3BCA5005DD366 /* Position.swift */; };
-		9B7EBC9727C3BCA5005DD366 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7EBC9027C3BCA5005DD366 /* Map.swift */; };
-		9B7EBC9827C3BCA5005DD366 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7EBC9027C3BCA5005DD366 /* Map.swift */; };
+		9B7EBC9727C3BCA5005DD366 /* AISMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7EBC9027C3BCA5005DD366 /* AISMap.swift */; };
+		9B7EBC9827C3BCA5005DD366 /* AISMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7EBC9027C3BCA5005DD366 /* AISMap.swift */; };
 		9B7EBC9B27C3BCA5005DD366 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7EBC9127C3BCA5005DD366 /* Ship.swift */; };
 		9B7EBC9C27C3BCA5005DD366 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7EBC9127C3BCA5005DD366 /* Ship.swift */; };
 		9B7EBC9D27C3BCA5005DD366 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7EBC9227C3BCA5005DD366 /* Coordinate.swift */; };
@@ -31,6 +31,8 @@
 		9B8EF5C527C3C116008EBCC8 /* ReaderPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8EF5C327C3C116008EBCC8 /* ReaderPage.swift */; };
 		9B8EF5C727C3C152008EBCC8 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8EF5C627C3C152008EBCC8 /* DocumentPicker.swift */; };
 		9B8EF5C827C3C152008EBCC8 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8EF5C627C3C152008EBCC8 /* DocumentPicker.swift */; };
+		9BB0C944281813DB00AA04A7 /* Map in Frameworks */ = {isa = PBXBuildFile; productRef = 9BB0C943281813DB00AA04A7 /* Map */; };
+		9BB0C947281813E200AA04A7 /* Map in Frameworks */ = {isa = PBXBuildFile; productRef = 9BB0C946281813E200AA04A7 /* Map */; };
 		9BD8E43627C3B9DE00D20733 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8E43527C3B9DE00D20733 /* Tests_iOS.swift */; };
 		9BD8E43827C3B9DE00D20733 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8E43727C3B9DE00D20733 /* Tests_iOSLaunchTests.swift */; };
 		9BD8E44227C3B9DE00D20733 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8E44127C3B9DE00D20733 /* Tests_macOS.swift */; };
@@ -53,8 +55,6 @@
 		9BD8E47927C3BA9900D20733 /* AISDateRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8E46F27C3BA9900D20733 /* AISDateRange.swift */; };
 		9BD8E47E27C3BB4200D20733 /* ShipPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8E47D27C3BB4200D20733 /* ShipPath.swift */; };
 		9BD8E47F27C3BB4200D20733 /* ShipPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8E47D27C3BB4200D20733 /* ShipPath.swift */; };
-		9BD8E48727C3BBBC00D20733 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8E48227C3BBBB00D20733 /* MapView.swift */; };
-		9BD8E48827C3BBBC00D20733 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8E48227C3BBBB00D20733 /* MapView.swift */; };
 		9BE081B82811D9000000E050 /* ReaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE081B72811D9000000E050 /* ReaderModel.swift */; };
 		9BE081B92811D9000000E050 /* ReaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE081B72811D9000000E050 /* ReaderModel.swift */; };
 		9BE081BB2811D9660000E050 /* NewPathPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE081BA2811D9660000E050 /* NewPathPopover.swift */; };
@@ -98,7 +98,7 @@
 		9B277F1528122F4D0092D3B0 /* Range.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Range.swift; sourceTree = "<group>"; };
 		9B6DDE4F27C40DF300B1B883 /* VisualizationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizationPage.swift; sourceTree = "<group>"; };
 		9B7EBC8E27C3BCA5005DD366 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
-		9B7EBC9027C3BCA5005DD366 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		9B7EBC9027C3BCA5005DD366 /* AISMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AISMap.swift; sourceTree = "<group>"; };
 		9B7EBC9127C3BCA5005DD366 /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
 		9B7EBC9227C3BCA5005DD366 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		9B8EF5C327C3C116008EBCC8 /* ReaderPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderPage.swift; sourceTree = "<group>"; };
@@ -121,7 +121,6 @@
 		9BD8E46E27C3BA9900D20733 /* AISShip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AISShip.swift; sourceTree = "<group>"; };
 		9BD8E46F27C3BA9900D20733 /* AISDateRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AISDateRange.swift; sourceTree = "<group>"; };
 		9BD8E47D27C3BB4200D20733 /* ShipPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipPath.swift; sourceTree = "<group>"; };
-		9BD8E48227C3BBBB00D20733 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		9BE081B72811D9000000E050 /* ReaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderModel.swift; sourceTree = "<group>"; };
 		9BE081BA2811D9660000E050 /* NewPathPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPathPopover.swift; sourceTree = "<group>"; };
 		9BE081BE2811DB0D0000E050 /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
@@ -137,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BB0C944281813DB00AA04A7 /* Map in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BB0C947281813E200AA04A7 /* Map in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,12 +171,18 @@
 				9BE081C42811DCBC0000E050 /* ReaderOptions.swift */,
 				9BD8E47D27C3BB4200D20733 /* ShipPath.swift */,
 				9B7EBC9227C3BCA5005DD366 /* Coordinate.swift */,
-				9B7EBC9027C3BCA5005DD366 /* Map.swift */,
 				9B7EBC8E27C3BCA5005DD366 /* Position.swift */,
 				9B7EBC9127C3BCA5005DD366 /* Ship.swift */,
 				9B277F0C281223280092D3B0 /* MapGrid.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9BB0C945281813E200AA04A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		9BD8E41727C3B9DD00D20733 = {
@@ -186,6 +193,7 @@
 				9BD8E43427C3B9DE00D20733 /* Tests iOS */,
 				9BD8E44027C3B9DE00D20733 /* Tests macOS */,
 				9BD8E42527C3B9DE00D20733 /* Products */,
+				9BB0C945281813E200AA04A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,6 +253,7 @@
 			children = (
 				9BD8E46B27C3BA9900D20733 /* AISDate.swift */,
 				9BD8E46F27C3BA9900D20733 /* AISDateRange.swift */,
+				9B7EBC9027C3BCA5005DD366 /* AISMap.swift */,
 				9BD8E46D27C3BA9900D20733 /* AISPosition.swift */,
 				9BD8E46C27C3BA9900D20733 /* AISRow.swift */,
 				9BD8E46E27C3BA9900D20733 /* AISShip.swift */,
@@ -262,7 +271,6 @@
 				9B6DDE4F27C40DF300B1B883 /* VisualizationPage.swift */,
 				9BE081BA2811D9660000E050 /* NewPathPopover.swift */,
 				9BE081CD2811F74E0000E050 /* NewGridPopover.swift */,
-				9BD8E48227C3BBBB00D20733 /* MapView.swift */,
 				9B277F092812227C0092D3B0 /* MapTypePicker.swift */,
 				9B277F0F281227000092D3B0 /* NumberField.swift */,
 			);
@@ -297,6 +305,9 @@
 			dependencies = (
 			);
 			name = "AISVisualizer (iOS)";
+			packageProductDependencies = (
+				9BB0C943281813DB00AA04A7 /* Map */,
+			);
 			productName = "AISVisualizer (iOS)";
 			productReference = 9BD8E42427C3B9DE00D20733 /* AISVisualizer.app */;
 			productType = "com.apple.product-type.application";
@@ -314,6 +325,9 @@
 			dependencies = (
 			);
 			name = "AISVisualizer (macOS)";
+			packageProductDependencies = (
+				9BB0C946281813E200AA04A7 /* Map */,
+			);
 			productName = "AISVisualizer (macOS)";
 			productReference = 9BD8E42A27C3B9DE00D20733 /* AISVisualizer.app */;
 			productType = "com.apple.product-type.application";
@@ -389,6 +403,9 @@
 				Base,
 			);
 			mainGroup = 9BD8E41727C3B9DD00D20733;
+			packageReferences = (
+				9BB0C942281813DB00AA04A7 /* XCRemoteSwiftPackageReference "Map" */,
+			);
 			productRefGroup = 9BD8E42527C3B9DE00D20733 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -441,10 +458,9 @@
 			files = (
 				9B6DDE5027C40DF300B1B883 /* VisualizationPage.swift in Sources */,
 				9BE081C22811DC200000E050 /* Array.swift in Sources */,
-				9BD8E48727C3BBBC00D20733 /* MapView.swift in Sources */,
 				9BE081B82811D9000000E050 /* ReaderModel.swift in Sources */,
 				9BD8E44527C3B9DE00D20733 /* AISVisualizerApp.swift in Sources */,
-				9B7EBC9827C3BCA5005DD366 /* Map.swift in Sources */,
+				9B7EBC9827C3BCA5005DD366 /* AISMap.swift in Sources */,
 				9B277F0D281223280092D3B0 /* MapGrid.swift in Sources */,
 				9B277F1328122DC20092D3B0 /* MKCoordinateRegion.swift in Sources */,
 				9BD8E47827C3BA9900D20733 /* AISDateRange.swift in Sources */,
@@ -477,10 +493,9 @@
 			files = (
 				9B6DDE5127C40DF300B1B883 /* VisualizationPage.swift in Sources */,
 				9BE081C32811DC200000E050 /* Array.swift in Sources */,
-				9BD8E48827C3BBBC00D20733 /* MapView.swift in Sources */,
 				9BE081B92811D9000000E050 /* ReaderModel.swift in Sources */,
 				9BD8E44627C3B9DE00D20733 /* AISVisualizerApp.swift in Sources */,
-				9B7EBC9727C3BCA5005DD366 /* Map.swift in Sources */,
+				9B7EBC9727C3BCA5005DD366 /* AISMap.swift in Sources */,
 				9B277F0E281223280092D3B0 /* MapGrid.swift in Sources */,
 				9B277F1428122DC20092D3B0 /* MKCoordinateRegion.swift in Sources */,
 				9BD8E47927C3BA9900D20733 /* AISDateRange.swift in Sources */,
@@ -901,6 +916,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9BB0C942281813DB00AA04A7 /* XCRemoteSwiftPackageReference "Map" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pauljohanneskraft/Map";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9BB0C943281813DB00AA04A7 /* Map */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9BB0C942281813DB00AA04A7 /* XCRemoteSwiftPackageReference "Map" */;
+			productName = Map;
+		};
+		9BB0C946281813E200AA04A7 /* Map */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9BB0C942281813DB00AA04A7 /* XCRemoteSwiftPackageReference "Map" */;
+			productName = Map;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9BD8E41827C3B9DD00D20733 /* Project object */;
 }

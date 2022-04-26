@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ShipPath: Equatable {
+struct ShipPath: Equatable, Identifiable {
 
     // MARK: Static Functions
 
@@ -17,6 +17,7 @@ struct ShipPath: Equatable {
 
     // MARK: Stored Properties
 
+    var id = UUID()
     let ship: Ship
     let positions: [Position]
     let color: Color

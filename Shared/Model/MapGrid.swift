@@ -9,9 +9,11 @@ import Foundation
 import SwiftUI
 import MapKit
 
-struct MapGrid: Equatable {
+struct MapGrid: Equatable, Identifiable {
 
     // MARK: Stored Properties
+
+    var id = UUID()
 
     var northLatitude = 50.0
     var westLongitude = -140.0
