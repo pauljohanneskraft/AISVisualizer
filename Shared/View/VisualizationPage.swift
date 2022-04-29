@@ -124,10 +124,12 @@ struct VisualizationPage: View {
                             ?? item.boundingMapRect
                         } ?? .world
 
-                        mapRect = boundingMapRect.insetBy(
-                            dx: -boundingMapRect.width / 4,
-                            dy: -boundingMapRect.height / 4
-                        )
+                        withAnimation {
+                            mapRect = boundingMapRect.insetBy(
+                                dx: -boundingMapRect.width / 4,
+                                dy: -boundingMapRect.height / 4
+                            )
+                        }
                     }
                     .disabled(paths.isEmpty && grids.isEmpty)
 

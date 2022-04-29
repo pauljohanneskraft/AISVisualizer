@@ -25,8 +25,11 @@ struct ReaderPage: View {
         case .ready:
             Group {
                 if urls.isEmpty {
-                    Text("No AIS files selected.")
-                    Text("Please make sure to select AIS files to be able to add ship paths.")
+                    VStack(spacing: 16) {
+                        Text("No AIS files selected.")
+                            .font(.headline)
+                        Text("Please make sure to select AIS files to be able to add ship paths.")
+                    }
                 } else {
                     List {
                         ForEach(urls, id: \.absoluteString) { url in
