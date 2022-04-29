@@ -37,8 +37,18 @@ struct NewPathPopover: View {
             if interpolate {
                 Slider(value: $interpolationInterval, in: 1...(20 * 60))
             }
-            DatePicker("Start", selection: $start)
-            DatePicker("End", selection: $end)
+            DatePicker(selection: $start) {
+                HStack {
+                    Text("Start")
+                    Spacer()
+                }
+            }
+            DatePicker(selection: $end) {
+                HStack {
+                    Text("End")
+                    Spacer()
+                }
+            }
             ColorPicker("Color", selection: $color)
             if isLoading {
                 ProgressView()

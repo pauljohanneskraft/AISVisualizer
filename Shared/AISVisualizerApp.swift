@@ -16,12 +16,11 @@ struct AISVisualizerApp: App {
         #if os(macOS)
         WindowGroup {
             NavigationView {
-                EmptyView()
+                Button("Hide sidebar") {
+                    NSApp.sendAction(#selector(NSSplitViewController.toggleSidebar(_:)), to: nil, from: nil)
+                }
                 ReaderPage(model: ReaderModel())
             }
-        }
-        .commands {
-            SidebarCommands()
         }
         #else
         WindowGroup {
