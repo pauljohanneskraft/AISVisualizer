@@ -25,7 +25,7 @@ struct ReaderOptionsPopover: View {
     // MARK: Computed Properties
 
     var body: some View {
-        VStack(spacing: 24) {
+        Popover {
             Toggle(
                 "Line Limit",
                 isOn: .init {
@@ -49,8 +49,6 @@ struct ReaderOptionsPopover: View {
                 )
             }
         }
-        .frame(minWidth: 250)
-        .padding(24)
     }
 
 }

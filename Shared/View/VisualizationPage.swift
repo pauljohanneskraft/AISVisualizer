@@ -112,8 +112,17 @@ struct VisualizationPage: View {
             }
 
             ToolbarItem(placement: .principal) {
+                #if os(macOS)
                 MapTypePicker(mapType: $mapType)
                     .pickerStyle(.segmented)
+                #else
+                if UIDevice.current.userInterfaceIdiom == .phone {
+                    MapTypePicker(mapType: $mapType)
+                } else {
+                    MapTypePicker(mapType: $mapType)
+                        .pickerStyle(.segmented)
+                }
+                #endif
             }
 
             ToolbarItem(placement: .primaryAction) {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B1750072822EFEA00DE016C /* Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1750062822EFEA00DE016C /* Popover.swift */; };
+		9B1750082822EFEA00DE016C /* Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1750062822EFEA00DE016C /* Popover.swift */; };
 		9B277F0A2812227C0092D3B0 /* MapTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B277F092812227C0092D3B0 /* MapTypePicker.swift */; };
 		9B277F0B2812227C0092D3B0 /* MapTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B277F092812227C0092D3B0 /* MapTypePicker.swift */; };
 		9B277F0D281223280092D3B0 /* MapGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B277F0C281223280092D3B0 /* MapGrid.swift */; };
@@ -91,6 +93,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B1750062822EFEA00DE016C /* Popover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popover.swift; sourceTree = "<group>"; };
 		9B277F092812227C0092D3B0 /* MapTypePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTypePicker.swift; sourceTree = "<group>"; };
 		9B277F0C281223280092D3B0 /* MapGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapGrid.swift; sourceTree = "<group>"; };
 		9B277F0F281227000092D3B0 /* NumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberField.swift; sourceTree = "<group>"; };
@@ -273,6 +276,7 @@
 				9BE081CD2811F74E0000E050 /* NewGridPopover.swift */,
 				9B277F092812227C0092D3B0 /* MapTypePicker.swift */,
 				9B277F0F281227000092D3B0 /* NumberField.swift */,
+				9B1750062822EFEA00DE016C /* Popover.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -463,6 +467,7 @@
 				9B7EBC9827C3BCA5005DD366 /* AISMap.swift in Sources */,
 				9B277F0D281223280092D3B0 /* MapGrid.swift in Sources */,
 				9B277F1328122DC20092D3B0 /* MKCoordinateRegion.swift in Sources */,
+				9B1750072822EFEA00DE016C /* Popover.swift in Sources */,
 				9BD8E47827C3BA9900D20733 /* AISDateRange.swift in Sources */,
 				9B8EF5C727C3C152008EBCC8 /* DocumentPicker.swift in Sources */,
 				9BD8E47627C3BA9900D20733 /* AISShip.swift in Sources */,
@@ -498,6 +503,7 @@
 				9B7EBC9727C3BCA5005DD366 /* AISMap.swift in Sources */,
 				9B277F0E281223280092D3B0 /* MapGrid.swift in Sources */,
 				9B277F1428122DC20092D3B0 /* MKCoordinateRegion.swift in Sources */,
+				9B1750082822EFEA00DE016C /* Popover.swift in Sources */,
 				9BD8E47927C3BA9900D20733 /* AISDateRange.swift in Sources */,
 				9B8EF5C827C3C152008EBCC8 /* DocumentPicker.swift in Sources */,
 				9BD8E47727C3BA9900D20733 /* AISShip.swift in Sources */,

@@ -28,31 +28,48 @@ struct NewPathPopover: View {
     // MARK: Computed Properties
 
     var body: some View {
-        VStack(spacing: 24) {
-            TextField("MMSI", text: $mmsi)
-            #if !os(macOS)
-                .keyboardType(.numberPad)
-            #endif
-            Toggle("Interpolation\(interpolate ? ": " + formattedInterpolationInterval : String())", isOn: $interpolate)
-            if interpolate {
-                Slider(value: $interpolationInterval, in: 1...(20 * 60))
-            }
-            DatePicker(selection: $start) {
-                HStack {
-                    Text("Start")
-                    Spacer()
-                }
-            }
-            DatePicker(selection: $end) {
-                HStack {
-                    Text("End")
-                    Spacer()
-                }
-            }
-            ColorPicker("Color", selection: $color)
+        Popover {
             if isLoading {
                 ProgressView()
             } else {
+
+                TextField("MMSI", text: $mmsi)
+                #if !os(macOS)
+                    .keyboardType(.numberPad)
+                #endif
+
+                Toggle(isOn: $interpolate) {
+                    HStack {
+                        Text("Interpolation\(interpolate ? ": " + formattedInterpolationInterval : String())")
+                        Spacer()
+                    }
+                }
+
+                if interpolate {
+                    Slider(value: $interpolationInterval, in: 1...(20 * 60))
+                }
+
+                DatePicker(selection: $start) {
+                    HStack {
+                        Text("Start")
+                        Spacer()
+                    }
+                }
+
+                DatePicker(selection: $end) {
+                    HStack {
+                        Text("End")
+                        Spacer()
+                    }
+                }
+
+                ColorPicker(selection: $color) {
+                    HStack {
+                        Text("Color")
+                        Spacer()
+                    }
+                }
+
                 Button("Add") {
                     Task {
                         isLoading = true
@@ -76,6 +93,7 @@ struct NewPathPopover: View {
                         isLoading = false
                     }
                 }
+
             }
         }
         .alert(item: $error) { error in
@@ -89,7 +107,6 @@ struct NewPathPopover: View {
             self.start = range?.start.actualDate ?? Date()
             self.end = range?.end.actualDate ?? Date()
         }
-        .padding(24)
         .environment(\.timeZone, TimeZone(secondsFromGMT: 0)!)
     }
 

@@ -20,59 +20,66 @@ struct NewGridPopover: View {
     // MARK: Computed Properties
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 24) {
-                NumberField(title: "North", value: $grid.northLatitude)
-                NumberField(title: "West", value: $grid.westLongitude)
-                NumberField(title: "South", value: $grid.southLatitude)
-                NumberField(title: "East", value: $grid.eastLongitude)
+        Popover {
 
-                Stepper(value: $grid.latitudinalCount, in: 1...200) {
-                    HStack {
-                        Text("Rows (Latitude)")
-                        Spacer()
-                        Text(grid.latitudinalCount.description)
-                    }
-                }
+            NumberField(title: "North", value: $grid.northLatitude)
+            NumberField(title: "West", value: $grid.westLongitude)
+            NumberField(title: "South", value: $grid.southLatitude)
+            NumberField(title: "East", value: $grid.eastLongitude)
 
-                Stepper(value: $grid.longitudinalCount, in: 1...200) {
-                    HStack {
-                        Text("Columns (Longitude)")
-                        Spacer()
-                        Text(grid.longitudinalCount.description)
-                    }
-                }
-
-                Stepper(value: $grid.overlap, in: 0...50) {
-                    HStack {
-                        Text("Overlap")
-                        Spacer()
-                        Text("\(grid.overlap) %")
-                    }
-                }
-
-                ColorPicker("Inner Color", selection: $grid.innerColor)
-                ColorPicker("Outer Color", selection: $grid.outerColor)
-
-                Button("Add") {
-                    if let error = grid.validate() {
-                        self.error = error
-                        return
-                    }
-                    grids.append(grid)
-                    environment.dismiss()
-                }
-                .alert(item: $error) { error in
-                    Alert(
-                        title: Text("Error"),
-                        message: Text(error)
-                    )
+            Stepper(value: $grid.latitudinalCount, in: 1...200) {
+                HStack {
+                    Text("Rows (Latitude)")
+                    Spacer()
+                    Text(grid.latitudinalCount.description)
                 }
             }
-            #if !os(macOS)
-            .frame(minWidth: UIScreen.main.bounds.width / 4)
-            #endif
-            .padding(24)
+
+            Stepper(value: $grid.longitudinalCount, in: 1...200) {
+                HStack {
+                    Text("Columns (Longitude)")
+                    Spacer()
+                    Text(grid.longitudinalCount.description)
+                }
+            }
+
+            Stepper(value: $grid.overlap, in: 0...50) {
+                HStack {
+                    Text("Overlap")
+                    Spacer()
+                    Text("\(grid.overlap) %")
+                }
+            }
+
+            ColorPicker(selection: $grid.innerColor) {
+                HStack {
+                    Text("Inner Color")
+                    Spacer()
+                }
+            }
+
+            ColorPicker(selection: $grid.outerColor) {
+                HStack {
+                    Text("Outer Color")
+                    Spacer()
+                }
+            }
+
+            Button("Add") {
+                if let error = grid.validate() {
+                    self.error = error
+                    return
+                }
+                grids.append(grid)
+                environment.dismiss()
+            }
+
+        }
+        .alert(item: $error) { error in
+            Alert(
+                title: Text("Error"),
+                message: Text(error)
+            )
         }
     }
 
