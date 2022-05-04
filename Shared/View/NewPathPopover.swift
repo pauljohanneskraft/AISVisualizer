@@ -90,6 +90,7 @@ struct NewPathPopover: View {
             self.end = range?.end.actualDate ?? Date()
         }
         .padding(24)
+        .environment(\.timeZone, TimeZone(secondsFromGMT: 0)!)
     }
 
     private var formattedInterpolationInterval: String {
